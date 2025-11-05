@@ -4,6 +4,12 @@ import axios from "axios";
 const backendURL = "https://alumni-association-network.onrender.com";
 
 export default function Home() {
+    if(!localStorage.getItem("loggedInUser")){
+        window.location.href = "/login";
+        return null;
+    }
+
+    
   const [form, setForm] = useState({ name:"", email:"", batch:"", department:"" });
   const [data, setData] = useState([]);
 
@@ -48,7 +54,11 @@ export default function Home() {
         <div style={{ display:"flex", justifyContent:"space-between", marginBottom:"20px" }}>
           <h2 style={{ margin:0, color:"#333" }}>Alumni Records</h2>
           <button 
-            onClick={()=> window.location.href="/login"}
+            onClick={()=>{
+                localStorage.removeItem("loggedInUser");
+                window.location.href="/login";
+              }}
+              
             style={{padding:"8px 12px",background:"#d9534f",color:"#fff",border:"none",borderRadius:"6px",cursor:"pointer"}}
           >
             Logout

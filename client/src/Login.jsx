@@ -16,7 +16,8 @@ export default function Login(){
     try{
       await axios.post(`${backendURL}/api/auth/login`,{ loginid,password });
       alert("✅ Login Successful!");
-      window.location.href = "/"; // redirect to CRUD page
+      localStorage.setItem("loggedInUser", loginid);
+      window.location.href = "/";
     }catch(err){
       alert(err.response?.data?.msg || "Error");
     }
