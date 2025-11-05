@@ -4,10 +4,6 @@ import axios from "axios";
 const backendURL = "https://alumni-association-network.onrender.com";
 
 export default function Home() {
-    if(!localStorage.getItem("loggedInUser")){
-        window.location.href = "/login";
-        return null;
-    }
 
     
   const [form, setForm] = useState({ name:"", email:"", batch:"", department:"" });
