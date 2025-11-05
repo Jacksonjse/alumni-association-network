@@ -4,20 +4,21 @@ import axios from 'axios';
 function App() {
   const [form, setForm] = useState({ name:"", email:"", batch:"", department:"" });
   const [data, setData] = useState([]);
+  const backendURL = "https://alumni-association-network.onrender.com";
 
   const loadData = async () => {
-    const res = await axios.get("http://localhost:5000/api/alumni");
+    const res = await axios.get(`${backendURL}/api/alumni`);
     setData(res.data);
   };
 
   const addRecord = async () => {
-    await axios.post("http://localhost:5000/api/alumni/add", form);
+    await axios.post(`${backendURL}/api/alumni/add`, form);
     setForm({ name:"", email:"", batch:"", department:"" });
     loadData();
   };
 
   const deleteRecord = async (id) => {
-    await axios.delete(`http://localhost:5000/api/alumni/${id}`);
+    await axios.delete(`${backendURL}/api/alumni/${id}`);
     loadData();
   };
 
