@@ -13,14 +13,14 @@ function App() {
 
   const addRecord = async () => {
     await axios.post(`${backendURL}/api/alumni/add`, form);
-    alert("✅ Record Added Successfully");
+    alert("✅ Record Added Successfully!");
     setForm({ name:"", email:"", batch:"", department:"" });
     loadData();
   };
   
   const deleteRecord = async (id) => {
     await axios.delete(`${backendURL}/api/alumni/${id}`);
-    alert("🗑️ Record Deleted Successfully");
+    alert("🗑️ Record Deleted Successfully!");
     loadData();
   };
 
