@@ -1,0 +1,55 @@
+# -----------------------
+# Node / Backend
+# -----------------------
+node_modules/
+.env
+.env.local
+.env.development
+.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.tmp
+
+# logs
+logs
+*.log
+logs/**
+*/logs/*
+*.pid
+*.seed
+
+# coverage
+coverage/
+*.lcov
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# -----------------------
+# Frontend (Vite)
+# -----------------------
+**/node_modules/
+**/dist/
+**/vite.config.ts.timestamp*
+vite.config.ts.timestamp*
+.vite/
+
+# Frontend build outputs
+*.local
+.cache
+out/
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+
+# -----------------------
+# Render/Vercel
+# -----------------------
+.vercel
+.netlify
